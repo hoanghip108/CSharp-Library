@@ -1,0 +1,15 @@
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\bin\Debug\net6.0\Minhanh.exe
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\bin\Debug\net6.0\Minhanh.deps.json
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\bin\Debug\net6.0\Minhanh.runtimeconfig.json
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\bin\Debug\net6.0\Minhanh.dll
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\bin\Debug\net6.0\Minhanh.pdb
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\obj\Debug\net6.0\Minhanh.csproj.AssemblyReference.cache
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\obj\Debug\net6.0\Minhanh.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\obj\Debug\net6.0\Minhanh.AssemblyInfoInputs.cache
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\obj\Debug\net6.0\Minhanh.AssemblyInfo.cs
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\obj\Debug\net6.0\Minhanh.csproj.CoreCompileInputs.cache
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\obj\Debug\net6.0\Minhanh.dll
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\obj\Debug\net6.0\refint\Minhanh.dll
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\obj\Debug\net6.0\Minhanh.pdb
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\obj\Debug\net6.0\Minhanh.genruntimeconfig.cache
+C:\Users\hoang\OneDrive\Desktop\MinhAnh\minhanh\obj\Debug\net6.0\ref\Minhanh.dll
