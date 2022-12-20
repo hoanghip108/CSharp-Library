@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hoang\\OneDrive\\Desktop\\MinhAnh\\Minhanh\\Minhanh.csproj": {}
+    "C:\\Users\\hoang\\OneDrive\\Desktop\\MinhAnh\\minhanh\\Minhanh.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hoang\\OneDrive\\Desktop\\MinhAnh\\Minhanh\\Minhanh.csproj": {
+    "C:\\Users\\hoang\\OneDrive\\Desktop\\MinhAnh\\minhanh\\Minhanh.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hoang\\OneDrive\\Desktop\\MinhAnh\\Minhanh\\Minhanh.csproj",
+        "projectUniqueName": "C:\\Users\\hoang\\OneDrive\\Desktop\\MinhAnh\\minhanh\\Minhanh.csproj",
         "projectName": "Minhanh",
-        "projectPath": "C:\\Users\\hoang\\OneDrive\\Desktop\\MinhAnh\\Minhanh\\Minhanh.csproj",
+        "projectPath": "C:\\Users\\hoang\\OneDrive\\Desktop\\MinhAnh\\minhanh\\Minhanh.csproj",
         "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hoang\\OneDrive\\Desktop\\MinhAnh\\Minhanh\\obj\\",
+        "outputPath": "C:\\Users\\hoang\\OneDrive\\Desktop\\MinhAnh\\minhanh\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,6 +1,6 @@
 ﻿using System;
 namespace Minhanh
-{
+    {
     class Program
     {
         static void Main(string[] args)

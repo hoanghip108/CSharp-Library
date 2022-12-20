@@ -6,22 +6,34 @@ namespace Minhanh
         public string password{get;set;}
         public bool checkLogin=false;
         public List<Student> listStudent;
-        Book listbook = new Book();
+        public List<Book> listbook = new List<Book>();
+        
+        
         public Manager()
         {
             username = "admin1";
             password = "123456";
             listStudent =  new List<Student>();
+             listbook.AddRange(new List<Book>
+            {
+                new Book("In Search of Lost Time","Marcel Proust","abc"),
+                new Book("Ulysses","James Joyce","abc"),
+                new Book("Don Quixote","Miguel de Cervantes","abc"),
+                new Book("One Hundred Years of Solitude","Gabriel Garcia Marquez","abc"),
+                new Book("The Great Gatsby","F. Scott Fitzgerald","abc"),
+            }
+            );
+            
         }
         protected override void PrintMenu()
         {
             System.Console.WriteLine("1. Register");
-            System.Console.WriteLine("2. View All Student");
-            System.Console.WriteLine("3. Add new book");
-            System.Console.WriteLine("4. Delete book");
-            System.Console.WriteLine("5. View all book");
-            System.Console.WriteLine("6. Rent book");
-            System.Console.WriteLine("7. Return book");
+            System.Console.WriteLine("2. Add new book");
+            System.Console.WriteLine("3. Delete book");
+            System.Console.WriteLine("4. View all book");
+            System.Console.WriteLine("5. Rent book");
+            System.Console.WriteLine("6. Return book");
+            //System.Console.WriteLine("7. View All Student");
             System.Console.WriteLine("0. Exit");           
         }
 
@@ -30,12 +42,12 @@ namespace Minhanh
             switch (choice)
             {
                 case 1: AddnewStudent();                       break;
-                case 2: ViewStudents();                        break;
-                case 3: AddNewBook();                          break;
-                case 4: DelBook();                             break;
-                case 5: ViewBooks(); break;
-                case 6: RentBook(); break;
-                case 7: ReturnBook(); break;
+                case 2: AddNewBook();                          break;
+                case 3: DelBook();                             break;
+                case 4: ViewBooks();                           break;
+                case 5: RentBook();                            break;
+                case 6: ReturnBook();                          break;
+                //case 7: ViewStudents();                        break;
                 case 0: Console.WriteLine("Bye!");             break;
                 default: Console.WriteLine("Invalid choice!"); break;                
             }           
@@ -50,16 +62,10 @@ namespace Minhanh
             listStudent.Add(builder.Build());   
         }
         void ViewStudents()
-        {            
+        {           
             foreach(var item in listStudent)
             {
-                var content = "";
-                content += $"Student ID:   \t {GetStudentId.ID}\n";
-                content += $"Student Name: \t {GetName.FullName}\n";
-                content += $"Class:        \t {GetClass.Class}\n";
-                content += $"Gender:       \t {GetGender.Gender}\n";
-                content += $"Age:          \t {GetAge.Age}";
-                System.Console.WriteLine(content);
+                
             }
         }
         bool check()
@@ -69,8 +75,7 @@ namespace Minhanh
             System.Console.Write("Enter Password: ");
             string pwd = Console.ReadLine();
             if(usr==username && pwd==password)
-            {
-                
+            {               
                 return true;
             }
             return false;
@@ -86,7 +91,7 @@ namespace Minhanh
                 string author = Console.ReadLine();
                 System.Console.Write("Enter description: ");
                 string description = Console.ReadLine();
-                listbook.listbook.Add(new Book(title,author,description));
+                listbook.Add(new Book(title,author,description));
             }
             else
             {
@@ -98,7 +103,7 @@ namespace Minhanh
             {
                 System.Console.WriteLine("Enter name of book: ");
                 string? name = Console.ReadLine();
-                listbook.listbook.Remove( listbook.listbook.Single( s => s.title == name ) );
+                listbook.Remove( listbook.Single( s => s.title == name ) );
                 System.Console.WriteLine("successfully!");
             }
             else
@@ -108,7 +113,7 @@ namespace Minhanh
         }
         void ViewBooks()
         {
-            foreach(var book in listbook.listbook)
+            foreach(var book in listbook)
             {
                 System.Console.Write("title: ");
                 System.Console.WriteLine(book.title);
@@ -123,7 +128,7 @@ namespace Minhanh
         {
                 System.Console.WriteLine("Enter name of book: ");
                 string title = Console.ReadLine();
-                foreach (var book in listbook.listbook) 
+                foreach (var book in listbook) 
                 {
                     
                     if(title==book.title)
@@ -131,13 +136,7 @@ namespace Minhanh
                         string author = book.author;
                         string description = book.description;
                         Student.rent.Add(new Book(title, author,description));
-                        System.Console.WriteLine("Rent successfully!");
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Our library does not contains that book!");
-                        break;
+                        System.Console.WriteLine("Rent successfully!");                        
                     }
                 }
         }
