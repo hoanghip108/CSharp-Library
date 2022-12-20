@@ -5,7 +5,7 @@ namespace Minhanh
         public string username{get;set;}
         public string password{get;set;}
         public bool checkLogin=false;
-        public List<Student> listStudent;
+        public List<Student> listStudent = new List<Student>();
         public List<Book> listbook = new List<Book>();
         
         
@@ -14,6 +14,9 @@ namespace Minhanh
             username = "admin1";
             password = "123456";
             listStudent =  new List<Student>();
+            listStudent.AddRange(new List<Student> { new Student((new GetStudentId(1)), new GetName("Hoang"), new GetClass("12a4"), new GetGender("Male"), new GetAge(20)),
+                new Student((new GetStudentId(2)), new GetName("Huy"), new GetClass("12a1"), new GetGender("Male"), new GetAge(22))
+            });
              listbook.AddRange(new List<Book>
             {
                 new Book("In Search of Lost Time","Marcel Proust","abc"),
@@ -33,7 +36,7 @@ namespace Minhanh
             System.Console.WriteLine("4. View all book");
             System.Console.WriteLine("5. Rent book");
             System.Console.WriteLine("6. Return book");
-            //System.Console.WriteLine("7. View All Student");
+            System.Console.WriteLine("7. View all book rented ");
             System.Console.WriteLine("0. Exit");           
         }
 
@@ -47,7 +50,7 @@ namespace Minhanh
                 case 4: ViewBooks();                           break;
                 case 5: RentBook();                            break;
                 case 6: ReturnBook();                          break;
-                //case 7: ViewStudents();                        break;
+                case 7: ViewRentedBook();                        break;
                 case 0: Console.WriteLine("Bye!");             break;
                 default: Console.WriteLine("Invalid choice!"); break;                
             }           
@@ -59,13 +62,14 @@ namespace Minhanh
                                                         .AddClass(new GetClass())
                                                         .AddGender(new GetGender())
                                                         .AddAge(new GetAge());
-            listStudent.Add(builder.Build());   
+            Student student = builder.Build();
+            listStudent.Add(student);   
         }
-        void ViewStudents()
+        void ViewRentedBook()
         {           
-            foreach(var item in listStudent)
+            foreach(var book in Student.rent)
             {
-                
+                Console.WriteLine(book.title);
             }
         }
         bool check()
@@ -128,6 +132,9 @@ namespace Minhanh
         {
                 System.Console.WriteLine("Enter name of book: ");
                 string title = Console.ReadLine();
+                
+            if(listbook.Exists(x => x.title == title))
+            {
                 foreach (var book in listbook) 
                 {
                     
@@ -139,25 +146,26 @@ namespace Minhanh
                         System.Console.WriteLine("Rent successfully!");                        
                     }
                 }
+            }
+            else
+            {
+                System.Console.WriteLine("We currently don't have that book!");
+            }
+                
         }
         void ReturnBook()
         {
              System.Console.WriteLine("Enter name of book want to return: ");
                 string? title = Console.ReadLine();
-                foreach (var book in Student.rent) 
-                {
-                    if(title==book.title)
-                    {
-                        Student.rent.Remove( Student.rent.Single( s => s.title == title ) );
-                        System.Console.WriteLine("Return successfully!");
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("you did borrow that book!");
-                        break;
-                    }
-                }
+            if (Student.rent.Exists(x => x.title == title))
+            {
+                Student.rent.RemoveAll(s => s.title == title);
+                Console.WriteLine("return success");
+            }
+            else
+            {
+                System.Console.WriteLine("You did not borrow that book ");
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Minhanh
         }
         public StudentBuilder AddAge(GetAge age)
         {
-            this.Age = age;
+            Age = age;
             return this;
         }
         public Student Build()

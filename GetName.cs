@@ -8,5 +8,10 @@ namespace Minhanh
             Console.Write("Enter Fullname: ");
             FullName = Console.ReadLine();
         }
+        public GetName(string name)
+        {
+            
+            FullName = name;
+        }
     }
 }

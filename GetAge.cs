@@ -8,5 +8,10 @@ namespace Minhanh
             Console.Write("Enter Age: ");
             Age = int.Parse(Console.ReadLine());
         }
+        public GetAge(int age)
+        {
+            
+            Age = age;
+        }
     }
 }

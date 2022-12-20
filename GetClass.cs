@@ -8,5 +8,10 @@ namespace Minhanh
             Console.Write("Enter Class: ");
             Class = Console.ReadLine();
         }
+        public GetClass(string clas)
+        {
+            
+            Class = clas;
+        }
     }
 }

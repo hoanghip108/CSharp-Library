@@ -12,5 +12,9 @@ static int generateId()
         {   
             ID = generateId();
         }
+        public GetStudentId(int id)
+        {
+            ID = id;
+        }
     }
 }
