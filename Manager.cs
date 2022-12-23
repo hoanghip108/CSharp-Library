@@ -51,19 +51,30 @@ namespace Minhanh
                 case 5: RentBook();                            break;
                 case 6: ReturnBook();                          break;
                 case 7: ViewRentedBook();                        break;
+                case 8: ViewStudents(); break;
                 case 0: Console.WriteLine("Bye!");             break;
                 default: Console.WriteLine("Invalid choice!"); break;                
             }           
         }
         void AddnewStudent()
         {
+            System.Console.WriteLine("Enter number of students");
             StudentBuilder builder = new StudentBuilder().AddId(new GetStudentId())
                                                         .AddFullname(new GetName())
                                                         .AddClass(new GetClass())
                                                         .AddGender(new GetGender())
                                                         .AddAge(new GetAge());
-            Student student = builder.Build();
-            listStudent.Add(student);   
+                Student student = builder.Build();
+                listStudent.Add(student);   
+        }
+        void ViewStudents()
+        {
+            
+            foreach( var item in listStudent)
+            {               
+                System.Console.WriteLine(GetStudentId.ID);
+                System.Console.WriteLine(GetName.FullName);
+            }
         }
         void ViewRentedBook()
         {           
